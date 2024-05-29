@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAP,0IAAO;AACP,OAAO,CAAP,qIAAO;AACP,OAAO,CAAP,qIAAO;AAEP,OAAO,CAAP,mIAAO;AACP,OAAO,CAAP,mIAAO;AACP,OAAO,CAAP,kIAAO;AACP,OAAO,CAAP,uIAAO",
+    "sources": [
+        "custom.scss"
+    ],
+    "names": [],
+    "file": "custom.css"
+}

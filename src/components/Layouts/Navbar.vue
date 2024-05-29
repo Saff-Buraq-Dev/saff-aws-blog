@@ -1,0 +1,146 @@
+<template>
+    <div :class="['navbar-area navbar-style-two', { 'is-sticky': isSticky }]">
+        <div class="vumy-nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <router-link class="navbar-brand" to="/">
+                        <img src="../../assets/images/gharbidev-blog.png" alt="logo" width="150">
+                    </router-link>
+
+                    <div class="navbar-toggler" @click="show = !show" :aria-pressed="show ? 'true' : 'false'"
+                        v-bind:class="{ show: button_show_state }" v-on:click="button_show_state = !button_show_state">
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </div>
+
+                    <div class="others-option d-flex align-items-center">
+                        <div class="contact-info">
+                            <div>
+                                <i class="flaticon-call"></i>
+                                <a href="tel:+15147130322">+1(514)713-0322</a>
+                            </div>
+                            <div>
+                                <i class="flaticon-email"></i>
+                                <a href="mailto:sgharbi@gharbidev.com">sgharbi@gharbidev.com</a>
+                            </div>
+                        </div>
+                        <div class="info d-flex align-items-center">
+                            <div class="search-icon" @click="search = !search" :aria-pressed="search ? 'true' : 'false'"
+                                v-bind:class="{ search: button_search_state }"
+                                v-on:click="button_search_state = !button_search_state">
+                                <i class='flaticon-search-interface-symbol'></i>
+                            </div>
+                            <div>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#sidebarModal">
+                                    <i class="flaticon-menu"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Search Overlay -->
+    <div class="search-overlay" :class="{ search: search }">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-close" @click="search = !search">
+                    <span class="search-overlay-close-line"></span>
+                    <span class="search-overlay-close-line"></span>
+                </div>
+                <div class="search-overlay-form">
+                    <form @submit.prevent="handleSearch">
+                        <input type="text" class="input-search" placeholder="Enter your keywords..."
+                            v-model="searchQuery">
+                        <button type="submit"><i class='flaticon-search-interface-symbol'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Search Overlay -->
+
+    <!-- Sidebar Modal -->
+    <div class="sidebarModal modal right fade" id="sidebarModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-bs-dismiss="modal"><i class='flaticon-cancel'></i></button>
+                <div class="modal-body">
+                    <div class="logo">
+                        <router-link to="/" class="d-inline-block"><img src="../../assets/images/gharbidev-blog.png"
+                                alt="image"></router-link>
+                    </div>
+                    <ul class="sidebar-contact-info">
+                        <li>
+                            <i class="ph-phone-call"></i>
+                            <span>Mon to Fri : 08:00AM - 06:00PM</span>
+                            <a href="tel:+15147130322">+1(514)713-0322</a>
+                        </li>
+                        <li>
+                            <i class="ph-envelope-simple-open"></i>
+                            <span>Do You Have a Question?</span>
+                            <a href="mailto:sgharbi@gharbidev.com">sgharbi@gharbidev.com</a>
+                        </li>
+                        <li>
+                            <i class="ph-map-pin"></i>
+                            <span>Montréal, Canada</span>
+                            <a href="https://maps.app.goo.gl/KM62ykNwqha43kVQ7" target="_blank">Find Us on Map</a>
+                        </li>
+                    </ul>
+                    <div class="box">
+                        <p>Latest resources, sent to your inbox weekly</p>
+                        <form class="newsletter-form" @submit.prevent>
+                            <input type="text" class="input-newsletter" placeholder="Enter your email address">
+                            <button type="submit" class="btn-style-one green-color">Subscribe Now <i
+                                    class="ph-caret-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar Modal -->
+</template>
+
+<script>
+export default {
+    name: 'NavbarStyleFive',
+    data() {
+        return {
+            isSticky: false,
+            show: false,
+            button_show_state: false,
+            search: false,
+            button_search_state: false,
+            searchQuery: '',
+        };
+    },
+    mounted() {
+        const that = this;
+        window.addEventListener("scroll", () => {
+            let scrollPos = window.scrollY;
+            if (scrollPos >= 100) {
+                that.isSticky = true;
+            } else {
+                that.isSticky = false;
+            }
+        });
+    },
+    methods: {
+        handleSearch() {
+            this.$router.push({
+                name: 'BlogSearchPage',
+                query: {
+                    query: this.searchQuery
+                }
+            });
+            this.search = false;
+        }
+    }
+}
+</script>
