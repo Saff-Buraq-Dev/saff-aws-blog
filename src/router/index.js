@@ -1,6 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-
 import ComingSoonPage from "../components/Pages/ComingSoonPage.vue";
 import ErrorPage from "../components/Pages/ErrorPage.vue";
 import ThankYouPage from "../components/Pages/ThankYouPage.vue";
@@ -12,33 +11,19 @@ import BlogSearchPage from "../components/Pages/BlogSearchPage.vue";
 import ContactPage from "../components/Pages/ContactPage.vue";
 
 const routes = [
-  {
-    path: "/", name: "BlogLeftSidebarPage", component: BlogLeftSidebarPage
-  },
+  { path: "/", name: "BlogLeftSidebarPage", component: BlogLeftSidebarPage },
   { path: "/coming-soon", name: "ComingSoonPage", component: ComingSoonPage },
-  { path: "/:pathMatch(.*)*", name: "ErrorPage", component: ErrorPage },
   { path: "/thank-you", name: "ThankYouPage", component: ThankYouPage },
-  {
-    path: "/blog-details/:id",
-    name: "BlogDetailsPage",
-    component: BlogDetailsPage,
-  },
-  {
-    path: "/blog-categories/:id",
-    name: "BlogCategoryPage",
-    component: BlogCategoryPage,
-  },
+  { path: "/blog-details/:id", name: "BlogDetailsPage", component: BlogDetailsPage },
+  { path: "/blog-categories/:id", name: "BlogCategoryPage", component: BlogCategoryPage },
   { path: "/blog-tags/:id", name: "BlogTagPage", component: BlogTagPage },
-  {
-    path: "/blog-search-result",
-    name: "BlogSearchPage",
-    component: BlogSearchPage,
-  },
+  { path: "/blog-search-result", name: "BlogSearchPage", component: BlogSearchPage },
   { path: "/contact", name: "ContactPage", component: ContactPage },
+  { path: "/:pathMatch(.*)*", name: "ErrorPage", component: ErrorPage },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/saff-aws-blog/'),
   linkExactActiveClass: "active",
   routes,
   scrollBehavior() {
