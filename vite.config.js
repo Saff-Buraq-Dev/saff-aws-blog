@@ -5,7 +5,11 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
     base: "/",
     plugins: [
-        vue({
+        vue({}),
+        move({
+            patterns: [
+                { from: '404.html', to: 'dist/404.html' }
+            ]
         })
     ],
     resolve: {
