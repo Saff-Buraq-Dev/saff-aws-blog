@@ -593,10 +593,11 @@ export default {
 
     name: 'BlogDetailsContent',
 
-    data: () => ({
-        title: 'Managing Secure Access to AWS with Identity and Access Management (IAM)',
-        image: '../../assets/images/blog/iam-introduction.png',
-        policyCode: `{
+    data() {
+        return {
+            title: 'Managing Secure Access to AWS with Identity and Access Management (IAM)',
+            image: '../../assets/images/blog/iam-introduction.png',
+            policyCode: `{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -617,18 +618,37 @@ export default {
         }
     ]
 }`
-    }),
-    metaInfo: () => {
-        return {
-            title: this.title,
-            meta: [
-                { property: 'og:title', content: this.title },
-                { property: 'og:image', content: this.image },
-                { property: 'og:url', content: window.location.href },
-                { property: 'og:type', content: 'article' },
-            ],
-        };
+        }
     },
 
+    mounted() {
+        this.updateMetaTags();
+    },
+    watch: {
+        '$route'() {
+            this.updateMetaTags();
+        },
+    },
+    methods: {
+        updateMetaTags() {
+            document.title = this.title;
+
+            // Remove existing meta tags
+            const existingTags = document.querySelectorAll('meta[property^="og:"], meta[name="description"]');
+            existingTags.forEach(tag => tag.remove());
+
+            // Add new meta tags
+            const metaTags = [
+                { property: 'og:title', content: this.title },
+                { property: 'og:image', content: this.image },
+            ];
+
+            metaTags.forEach(tag => {
+                const metaTag = document.createElement('meta');
+                Object.entries(tag).forEach(([key, value]) => metaTag.setAttribute(key, value));
+                document.head.appendChild(metaTag);
+            });
+        },
+    }
 }
 </script>
