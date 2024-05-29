@@ -5,7 +5,8 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="blog-details-desc green-color">
                         <div class="post-thumb">
-                            <img style="height: 450px; object-fit: fill; width: 100%;" :src="image" alt="blog-details">
+                            <img style="height: 450px; object-fit: fill; width: 100%;"
+                                src="../../assets/images/blog/iam-introduction.png" alt="blog-details">
                         </div>
                         <div class="post-meta">
                             <ul>
