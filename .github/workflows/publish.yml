@@ -28,19 +28,19 @@ jobs:
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
         with:
-          static_site_generator: next
+          enablement: true
 
       - name: Build  🏗️
         run: |
           npm run build
 
       - name: Create .nojekyll file
-        run: touch build/.nojekyll
+        run: touch dist/.nojekyll
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./dist
 
   deploy:
     environment:
