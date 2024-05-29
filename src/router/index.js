@@ -23,7 +23,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/saff-aws-blog/'),
+  history: createWebHistory('/'),
   linkExactActiveClass: "active",
   routes,
   scrollBehavior() {
