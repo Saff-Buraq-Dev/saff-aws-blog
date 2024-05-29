@@ -6,11 +6,6 @@ export default defineConfig({
     base: "/",
     plugins: [
         vue({}),
-        move({
-            patterns: [
-                { from: '404.html', to: 'dist/404.html' }
-            ]
-        })
     ],
     resolve: {
         alias: [
