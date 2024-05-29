@@ -4,6 +4,7 @@ import router from "./router";
 import AOS from "aos";
 import BootstrapVue3 from "bootstrap-vue-3";
 import Toaster from "@meforma/vue-toaster";
+import VueMeta from 'vue-meta';
 import { createVCodeBlock } from '@wdns/vue-code-block';
 
 import "aos/dist/aos.css";
@@ -23,6 +24,7 @@ const VCodeBlock = createVCodeBlock({
 app.use(router).use(Toaster);
 app.use(BootstrapVue3);
 app.use(VCodeBlock);
+app.use(VueMeta);
 
 app.mount("#app");
 
