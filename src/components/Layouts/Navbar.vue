@@ -15,16 +15,23 @@
                     </div>
 
                     <div class="others-option d-flex align-items-center">
-                        <div class="contact-info">
-                            <div>
-                                <i class="flaticon-call"></i>
-                                <a href="tel:+15147130322">+1(514)713-0322</a>
-                            </div>
-                            <div>
-                                <i class="flaticon-email"></i>
-                                <a href="mailto:sgharbi@gharbidev.com">sgharbi@gharbidev.com</a>
-                            </div>
+
+                        <div class="others-option" v-if="authIsReady && user">
+                            <button @click="logout" class="btn-style-one red-light-color">
+                                Logout
+                                <i class="ph-caret-right"></i>
+                            </button>
                         </div>
+                        <div class="others-option" v-else-if="authIsReady">
+                            <router-link to="/login" class="btn-style-one red-light-color">
+                                Login / Register
+                                <i class="ph-caret-right"></i>
+                            </router-link>
+                        </div>
+
+
+
+
                         <div class="info d-flex align-items-center">
                             <div class="search-icon" @click="search = !search" :aria-pressed="search ? 'true' : 'false'"
                                 v-bind:class="{ search: button_search_state }"
@@ -37,11 +44,13 @@
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </nav>
             </div>
         </div>
     </div>
+
     <!-- Search Overlay -->
     <div class="search-overlay" :class="{ search: search }">
         <div class="d-table">
@@ -108,8 +117,10 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 export default {
-    name: 'NavbarStyleFive',
+    name: 'Navbar',
     data() {
         return {
             isSticky: false,
@@ -117,7 +128,7 @@ export default {
             button_show_state: false,
             search: false,
             button_search_state: false,
-            searchQuery: '',
+            searchQuery: ''
         };
     },
     mounted() {
@@ -131,6 +142,16 @@ export default {
             }
         });
     },
+    setup() {
+        const store = useStore();
+        const user = computed(() => store.getters.user);
+        const authIsReady = computed(() => store.getters.authIsReady);
+
+        return {
+            user,
+            authIsReady,
+        };
+    },
     methods: {
         handleSearch() {
             this.$router.push({
@@ -140,6 +161,9 @@ export default {
                 }
             });
             this.search = false;
+        },
+        logout() {
+            this.$store.dispatch('logout');
         }
     }
 }

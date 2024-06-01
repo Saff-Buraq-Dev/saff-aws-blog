@@ -134,187 +134,15 @@
                                     <li><a href="/blog-tags/aws" rel="tag">aws</a></li>
                                 </ul>
                             </div>
-                            <!--
-                            <div class="article-share">
-                                <ul class="social">
-                                    <li><span>Share:</span></li>
-                                    <li><a href="https://www.facebook.com/" class="facebook" target="_blank"><i
-                                                class="ph-facebook-logo"></i></a></li>
-                                    <li><a href="https://www.twitter.com/" class="twitter" target="_blank"><i
-                                                class="ph-twitter-logo"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i
-                                                class="ph-linkedin-logo"></i></a></li>
-                                    <li><a href="https://www.instagram.com/" class="instagram" target="_blank"><i
-                                                class="ph-instagram-logo"></i></a></li>
-                                </ul>
-                            </div>
-                            -->
+
                         </div>
                     </div>
 
-                    <!--
-                    <div class="comments-area green-color">
-                        <h3 class="comments-title">2 Comments:</h3>
-                        <ol class="comment-list">
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="../../assets/images/user/user1.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Jones</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>August 01, 2021 at 10:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a href="#" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="../../assets/images/user/user2.jpg" class="avatar"
-                                                        alt="user">
-                                                    <b class="fn">Steven Smith</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>August 02, 2021 at 21:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a href="#" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                        <ol class="children">
-                                            <li class="comment">
-                                                <div class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img src="../../assets/images/user/user3.jpg" class="avatar"
-                                                                alt="user">
-                                                            <b class="fn">Sarah Taylor</b>
-                                                        </div>
-                                                        <div class="comment-metadata">
-                                                            <span>August 03, 2021 at 05:59 am</span>
-                                                        </div>
-                                                    </footer>
-                                                    <div class="comment-content">
-                                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever
-                                                            since the 1500s, when an unknown printer took a galley of
-                                                            type and scrambled it to make a type specimen.</p>
-                                                    </div>
-                                                    <div class="reply">
-                                                        <a href="#" class="comment-reply-link">Reply</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="../../assets/images/user/user4.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Doe</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>August 04, 2021 at 05:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a href="#" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="../../assets/images/user/user1.jpg" class="avatar"
-                                                        alt="user">
-                                                    <b class="fn">James Anderson</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>August 05, 2021 at 04:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a href="#" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </li>
-                        </ol>
-                        <div class="comment-respond">
-                            <h3 class="comment-reply-title">Leave A Reply</h3>
-                            <p class="comment-notes"><span id="email-notes">Your email address will not be
-                                    published.</span> Required fields are marked <span class="required">*</span></p>
-                            <form class="comment-form" @submit.prevent>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Website">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" cols="30" rows="5"
-                                                placeholder="Your Comment..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkme">
-                                            <label class="form-check-label" for="checkme">
-                                                Save my name, email, and website in this browser for the next time I
-                                                comment.
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <button type="submit" class="submit-btn">Post A Comment</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                -->
+                    <!-- ShareThis BEGIN -->
+                    <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+
+                    <!-- Comments -->
+                    <Comments :article="'cloud-computing-introduction'" />
 
 
                 </div>
@@ -324,7 +152,32 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head';
+import imageUrl from '../../assets/images/blog/cloud-computing-introduction.webp';
+
 export default {
-    name: 'BlogDetailsContent'
+    name: 'BlogDetailsCloudComputingIntroduction',
+    setup() {
+        useHead({
+            title: 'Unlocking Cloud Mastery: An Introductory Course to Cloud Computing',
+            meta: [
+                { name: 'description', content: 'An introductory course to Cloud Computing, exploring its benefits, service models, and empowering capabilities.' },
+                { name: 'keywords', content: 'Cloud Computing, Cloud Mastery, IaaS, PaaS, SaaS' },
+                { name: 'author', content: 'Safouene Gharbi' },
+                { property: 'og:title', content: 'Unlocking Cloud Mastery: An Introductory Course to Cloud Computing' },
+                { property: 'og:description', content: 'An introductory course to Cloud Computing, exploring its benefits, service models, and empowering capabilities.' },
+                { property: 'og:image', content: imageUrl },
+                { property: 'og:image:width', content: 1200 },
+                { property: 'og:image:height', content: 627 },
+                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/cloud-computing-introduction' },
+                { property: 'og:type', content: 'article' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'twitter:title', content: 'Unlocking Cloud Mastery: An Introductory Course to Cloud Computing' },
+                { name: 'twitter:description', content: 'An introductory course to Cloud Computing, exploring its benefits, service models, and empowering capabilities.' },
+                { name: 'twitter:image', content: imageUrl },
+            ]
+        });
+    },
+
 }
 </script>

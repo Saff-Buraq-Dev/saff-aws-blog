@@ -1,9 +1,11 @@
 import { createApp, markRaw } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import store from "./store";
 import AOS from "aos";
 import BootstrapVue3 from "bootstrap-vue-3";
 import Toaster from "@meforma/vue-toaster";
+import { createHead } from '@vueuse/head';
 import { createVCodeBlock } from '@wdns/vue-code-block';
 
 import "aos/dist/aos.css";
@@ -19,10 +21,13 @@ app.config.globalProperties.$router = markRaw(router);
 const VCodeBlock = createVCodeBlock({
     // options
 });
+const head = createHead();
 
 app.use(router).use(Toaster);
+app.use(store);
 app.use(BootstrapVue3);
 app.use(VCodeBlock);
+app.use(head);
 
 app.mount("#app");
 

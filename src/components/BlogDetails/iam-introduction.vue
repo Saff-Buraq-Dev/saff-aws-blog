@@ -402,172 +402,8 @@
                     <!-- ShareThis BEGIN -->
                     <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 
-
-
-                    <!--
-                    <div class="comments-area green-color">
-                        <h3 class="comments-title">2 Comments:</h3>
-                        <ol class="comment-list">
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="../../assets/images/user/user1.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Jones</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>August 01, 2021 at 10:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a href="#" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="../../assets/images/user/user2.jpg" class="avatar"
-                                                        alt="user">
-                                                    <b class="fn">Steven Smith</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>August 02, 2021 at 21:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a href="#" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                        <ol class="children">
-                                            <li class="comment">
-                                                <div class="comment-body">
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-author vcard">
-                                                            <img src="../../assets/images/user/user3.jpg" class="avatar"
-                                                                alt="user">
-                                                            <b class="fn">Sarah Taylor</b>
-                                                        </div>
-                                                        <div class="comment-metadata">
-                                                            <span>August 03, 2021 at 05:59 am</span>
-                                                        </div>
-                                                    </footer>
-                                                    <div class="comment-content">
-                                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever
-                                                            since the 1500s, when an unknown printer took a galley of
-                                                            type and scrambled it to make a type specimen.</p>
-                                                    </div>
-                                                    <div class="reply">
-                                                        <a href="#" class="comment-reply-link">Reply</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li class="comment">
-                                <div class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img src="../../assets/images/user/user4.jpg" class="avatar" alt="user">
-                                            <b class="fn">John Doe</b>
-                                        </div>
-                                        <div class="comment-metadata">
-                                            <span>August 04, 2021 at 05:59 am</span>
-                                        </div>
-                                    </footer>
-                                    <div class="comment-content">
-                                        <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen.</p>
-                                    </div>
-                                    <div class="reply">
-                                        <a href="#" class="comment-reply-link">Reply</a>
-                                    </div>
-                                </div>
-                                <ol class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <footer class="comment-meta">
-                                                <div class="comment-author vcard">
-                                                    <img src="../../assets/images/user/user1.jpg" class="avatar"
-                                                        alt="user">
-                                                    <b class="fn">James Anderson</b>
-                                                </div>
-                                                <div class="comment-metadata">
-                                                    <span>August 05, 2021 at 04:59 am</span>
-                                                </div>
-                                            </footer>
-                                            <div class="comment-content">
-                                                <p>Lorem Ipsum has been the industry’s standard dummy text ever since
-                                                    the 1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen.</p>
-                                            </div>
-                                            <div class="reply">
-                                                <a href="#" class="comment-reply-link">Reply</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </li>
-                        </ol>
-                        <div class="comment-respond">
-                            <h3 class="comment-reply-title">Leave A Reply</h3>
-                            <p class="comment-notes"><span id="email-notes">Your email address will not be
-                                    published.</span> Required fields are marked <span class="required">*</span></p>
-                            <form class="comment-form" @submit.prevent>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Website">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" cols="30" rows="5"
-                                                placeholder="Your Comment..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkme">
-                                            <label class="form-check-label" for="checkme">
-                                                Save my name, email, and website in this browser for the next time I
-                                                comment.
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <button type="submit" class="submit-btn">Post A Comment</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                -->
-
+                    <!-- Comments -->
+                    <Comments :article="'iam-introduction'" />
 
                 </div>
             </div>
@@ -589,10 +425,17 @@
 </style>
 
 <script>
+import { useHead } from '@vueuse/head';
+import Comments from '../Comments/Comments.vue';
+
+import imageUrl from '../../assets/images/blog/iam-introduction.png';
+
 export default {
 
-    name: 'BlogDetailsContent',
-
+    name: 'BlogDetailsIamIntroduction',
+    components: {
+        Comments
+    },
     data() {
         return {
             title: 'Managing Secure Access to AWS with Identity and Access Management (IAM)',
@@ -620,35 +463,28 @@ export default {
 }`
         }
     },
-
-    mounted() {
-        this.updateMetaTags();
-    },
-    watch: {
-        '$route'() {
-            this.updateMetaTags();
-        },
-    },
-    methods: {
-        updateMetaTags() {
-            document.title = this.title;
-
-            // Remove existing meta tags
-            const existingTags = document.querySelectorAll('meta[property^="og:"], meta[name="description"]');
-            existingTags.forEach(tag => tag.remove());
-
-            // Add new meta tags
-            const metaTags = [
-                { property: 'og:title', content: this.title },
-                { property: 'og:image', content: this.image },
-            ];
-
-            metaTags.forEach(tag => {
-                const metaTag = document.createElement('meta');
-                Object.entries(tag).forEach(([key, value]) => metaTag.setAttribute(key, value));
-                document.head.appendChild(metaTag);
-            });
-        },
+    setup() {
+        useHead({
+            title: 'Introduction to AWS IAM',
+            meta: [
+                { name: 'description', content: 'Introduction to AWS IAM: Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
+                { name: 'keywords', content: 'AWS, IAM, Identity and Access Management, Security, Cloud, AWS Security, IAM Users, IAM Groups, IAM Roles, IAM Policies' },
+                { name: 'author', content: 'Safouene Gharbi' },
+                { property: 'og:title', content: 'Introduction to AWS IAM' },
+                { property: 'og:description', content: 'Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
+                { property: 'og:image', content: imageUrl },
+                { property: 'og:image:width', content: 1200 },
+                { property: 'og:image:height', content: 627 },
+                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/iam-introduction' },
+                { property: 'og:type', content: 'article' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'twitter:title', content: 'Introduction to AWS IAM' },
+                { name: 'twitter:description', content: 'Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
+                { name: 'twitter:image', content: imageUrl },
+            ]
+        });
     }
+
+
 }
 </script>

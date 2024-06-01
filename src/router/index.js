@@ -9,6 +9,7 @@ import BlogCategoryPage from "../components/Pages/BlogCategoryPage.vue";
 import BlogTagPage from "../components/Pages/BlogTagPage.vue";
 import BlogSearchPage from "../components/Pages/BlogSearchPage.vue";
 import ContactPage from "../components/Pages/ContactPage.vue";
+import AuthenticationPage from "../components/Pages/AuthenticationPage.vue";
 
 const routes = [
   { path: "/", name: "BlogLeftSidebarPage", component: BlogLeftSidebarPage },
@@ -19,6 +20,11 @@ const routes = [
   { path: "/blog-tags/:id", name: "BlogTagPage", component: BlogTagPage },
   { path: "/blog-search-result", name: "BlogSearchPage", component: BlogSearchPage },
   { path: "/contact", name: "ContactPage", component: ContactPage },
+  {
+    path: "/login",
+    name: "AuthenticationPage",
+    component: AuthenticationPage,
+  },
   { path: "/:pathMatch(.*)*", name: "ErrorPage", component: ErrorPage },
 ];
 

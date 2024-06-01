@@ -8,33 +8,7 @@
                 </div>
                 <div class="col-xl-8 col-lg-7 col-md-12">
                     <div class="row">
-                        <div v-for="(article, index) in paginatedArticles" :key="index"
-                            class="col-xl-6 col-lg-12 col-md-6" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="single-blog-post">
-                                <div class="image">
-                                    <router-link :to="`/blog-details/${article.path}`" class="d-block">
-                                        <img :src="getImagePath(article.picture_path)" alt="blog-image" />
-                                    </router-link>
-                                </div>
-                                <div class="content">
-                                    <ul class="meta">
-                                        <li>
-                                            <i class="ph-tag"></i>
-                                            <router-link :to="`/blog-categories/${article.categories[0]}`">{{
-                        article.categories[0] }}</router-link>
-                                        </li>
-                                        <li>
-                                            <i class="ph-calendar-check"></i>
-                                            {{ new Date(article.publication_date).toLocaleDateString() }}
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <router-link :to="`/blog-details/${article.path}`">{{ article.title
-                                            }}</router-link>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        <Card v-for="article in paginatedArticles" :key="article.path" :article="article" />
                         <div class="col-xl-12 col-lg-12 col-md-12" data-aos="fade-up" data-aos-duration="1200"
                             data-aos-delay="200">
                             <div class="pagination-area">
@@ -63,11 +37,13 @@ import BlogSidebar from '../Common/BlogSidebar.vue';
 import { articleService } from '../../services/apiServices.js';
 
 import image from '../../assets/images/blog/blog1.jpg';
+import Card from '../Card/Card.vue';
 
 export default {
     name: 'BlogLeftSidebar',
     components: {
         BlogSidebar,
+        Card
     },
     data() {
         return {
