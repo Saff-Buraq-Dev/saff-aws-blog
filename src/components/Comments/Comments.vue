@@ -75,7 +75,6 @@ export default {
                     comments.value = response;
                 })
                 .catch(error => {
-                    console.error('Error fetching comments:', error);
                 });
         };
 
@@ -90,11 +89,9 @@ export default {
                     user_photo_url: user.value.photoURL
                 }
                 commentsService.postComment(body).then(response => {
-                    console.log('Comment posted:', response);
                     fetchComments();
                     commentText.value = '';
                 }).catch(error => {
-                    console.error('Error posting comment:', error);
                 });
             }
         };

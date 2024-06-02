@@ -29,7 +29,6 @@ const store = createStore({
     mutations: {
         setUser(state, payload) {
             state.user = payload;
-            console.log('user state changed:', state.user);
         },
         setAuthIsReady(state, payload) {
             state.authIsReady = payload;
@@ -37,7 +36,6 @@ const store = createStore({
     },
     actions: {
         async signup(context, { email, password }) {
-            console.log('signup action');
 
             const res = await createUserWithEmailAndPassword(auth, email, password);
             if (res) {
@@ -49,7 +47,6 @@ const store = createStore({
             }
         },
         async login(context, { email, password }) {
-            console.log('login action');
 
             const res = await signInWithEmailAndPassword(auth, email, password);
             if (res) {
@@ -61,7 +58,6 @@ const store = createStore({
             }
         },
         async logout(context) {
-            console.log('logout action');
 
             await signOut(auth);
             context.commit('setUser', null);
@@ -91,7 +87,6 @@ const store = createStore({
                 });
         },
         async handleRedirect({ commit }) {
-            console.log('handle redirect');
             try {
                 const result = await getRedirectResult(auth);
                 if (result) {

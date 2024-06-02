@@ -40,7 +40,6 @@ export default {
                 const component = await import(`../BlogDetails/${id}.vue`)
                 this.blogComponent = markRaw(component.default || component)
             } catch (e) {
-                console.error(`Failed to load BlogDetails component for id ${id}`, e)
                 this.blogComponent = null
             }
         }

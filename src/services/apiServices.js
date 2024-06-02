@@ -97,13 +97,11 @@ export const commentsService = (() => {
 
     const baseUrl = 'https://f0574d5dfe.execute-api.ca-central-1.amazonaws.com/dev'
     const getComments = (articleId) => {
-        console.log(`${baseUrl}/comments/${articleId}`);
         return fetch(`${baseUrl}/comments/${articleId}`)
             .then(response => response.json());
     };
 
     const postComment = (body) => {
-        console.log(body);
         return fetch(`${baseUrl}/comments`, {
             method: 'POST',
             headers: {
