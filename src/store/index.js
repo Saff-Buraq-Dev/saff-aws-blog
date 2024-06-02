@@ -42,6 +42,7 @@ const store = createStore({
             const res = await createUserWithEmailAndPassword(auth, email, password);
             if (res) {
                 context.commit('setUser', res.user);
+                commit('setAuthIsReady', true);
                 router.push('/');
             } else {
                 toaster.error('could not complete signup');
@@ -53,6 +54,7 @@ const store = createStore({
             const res = await signInWithEmailAndPassword(auth, email, password);
             if (res) {
                 context.commit('setUser', res.user);
+                commit('setAuthIsReady', true);
                 router.push('/');
             } else {
                 toaster.error('could not complete login');
@@ -67,6 +69,11 @@ const store = createStore({
         async loginGoogle() {
             const provider = new GoogleAuthProvider();
             signInWithRedirect(auth, provider)
+                .then((result) => {
+                    commit('setUser', result.user);
+                    commit('setAuthIsReady', true);
+                    router.push('/');
+                })
                 .catch((error) => {
                     toaster.error("An error occurred during Google login!");
                 });
@@ -74,6 +81,11 @@ const store = createStore({
         async loginGithub() {
             const provider = new GithubAuthProvider();
             signInWithRedirect(auth, provider)
+                .then((result) => {
+                    commit('setUser', result.user);
+                    commit('setAuthIsReady', true);
+                    router.push('/');
+                })
                 .catch((error) => {
                     toaster.error("An error occurred during GitHub login!");
                 });
@@ -84,6 +96,7 @@ const store = createStore({
                 const result = await getRedirectResult(auth);
                 if (result) {
                     commit('setUser', result.user);
+                    commit('setAuthIsReady', true);
                 }
             } catch (error) {
                 toaster.error(error.message);

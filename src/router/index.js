@@ -1,8 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
+import store from "../store";
 
-import ComingSoonPage from "../components/Pages/ComingSoonPage.vue";
 import ErrorPage from "../components/Pages/ErrorPage.vue";
-import ThankYouPage from "../components/Pages/ThankYouPage.vue";
 import BlogLeftSidebarPage from "../components/Pages/BlogLeftSidebarPage.vue";
 import BlogDetailsPage from "../components/Pages/BlogDetailsPage.vue";
 import BlogCategoryPage from "../components/Pages/BlogCategoryPage.vue";
@@ -13,8 +12,6 @@ import AuthenticationPage from "../components/Pages/AuthenticationPage.vue";
 
 const routes = [
   { path: "/", name: "BlogLeftSidebarPage", component: BlogLeftSidebarPage },
-  { path: "/coming-soon", name: "ComingSoonPage", component: ComingSoonPage },
-  { path: "/thank-you", name: "ThankYouPage", component: ThankYouPage },
   { path: "/blog-details/:id", name: "BlogDetailsPage", component: BlogDetailsPage },
   { path: "/blog-categories/:id", name: "BlogCategoryPage", component: BlogCategoryPage },
   { path: "/blog-tags/:id", name: "BlogTagPage", component: BlogTagPage },
@@ -36,5 +33,30 @@ const router = createRouter({
     return { top: 0, behavior: "smooth" };
   },
 });
+
+router.beforeEach((to, from, next) => {
+  if (!store.getters.authIsReady) {
+    const unsubscribe = store.watch(
+      (state, getters) => getters.authIsReady,
+      (isReady) => {
+        if (isReady) {
+          unsubscribe();
+          if (to.path === '/login' && store.state.user) {
+            next('/');
+          } else {
+            next();
+          }
+        }
+      }
+    );
+  } else {
+    if (to.path === '/login' && store.state.user) {
+      next('/');
+    } else {
+      next();
+    }
+  }
+});
+
 
 export default router;

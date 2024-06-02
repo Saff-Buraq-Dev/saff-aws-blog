@@ -1,4 +1,3 @@
-
 <template>
     <div class="template-footer-two pt-100">
         <div class="container">
@@ -6,21 +5,21 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <router-link to="/" class="logo">
-                            <img src="../../assets/images/white-logo.png" alt="logo">
+                            <img src="../../assets/images/gharbidev-blog.png" alt="logo">
                         </router-link>
-                        <p>Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut.</p>
+                        <p>Discover the latest insights on our blog.</p>
                         <ul class="footer-contact-info">
                             <li>
                                 <i class="ph-phone-call"></i>
-                                <a href="tel:+1-485-456-0102">+1-485-456-0102</a>
+                                <a href="tel:+1-514-713-0322">+1-514-713-0322</a>
                             </li>
                             <li>
                                 <i class="ph-envelope-simple"></i>
-                                <a href="mailto:hello@vumy.com">hello@vumy.com</a>
+                                <a href="mailto:sgharbi@gharbidev.com">sgharbi@gharbidev.com</a>
                             </li>
                             <li>
                                 <i class="ph-map-pin"></i>
-                                2750 Quadra Street Victoria, Canada.
+                                Montreal, Canada.
                             </li>
                         </ul>
                     </div>
@@ -29,18 +28,10 @@
                     <div class="single-footer-widget pl-3">
                         <h3>Quick links</h3>
                         <ul class="quick-links">
-                            <li><router-link to="/">IT Startup</router-link></li>
-                            <li><router-link to="/business">Business</router-link></li>
-                            <li><router-link to="/app">Vumy App</router-link></li>
-                            <li><router-link to="/insurance">Insurance</router-link></li>
-                            <li><router-link to="/property">Property</router-link></li>
-                            <li><router-link to="/big-data">Big Data</router-link></li>
-                            <li><router-link to="/distance-learning">Distance Learning</router-link></li>
-                            <li><router-link to="/chat-bot">Chat Bot</router-link></li>
-                            <li><router-link to="/software">Software</router-link></li>
-                            <li><router-link to="/medical">Medical</router-link></li>
-                            <li><router-link to="/contact">Contact Us</router-link></li>
-                            <li><router-link to="/about-us">About Us</router-link></li>
+                            <li><a href="https://gharbidev.com" target="_blank">Portfolio</a></li>
+                            <li><a href="https://www.linkedin.com/in/safouene-gharbi/" target="_blank">Linkedin</a></li>
+                            <li><a href="https://github.com/Saff-Buraq-Dev" target="_blank">Github</a></li>
+                            <li><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,9 +41,10 @@
                         <div class="box">
                             <p>Latest resources, sent to your inbox weekly</p>
                             <form class="newsletter-form" @submit.prevent>
-                                <input type="text" class="input-newsletter" placeholder="Enter your email address" name="EMAIL">
+                                <input type="text" class="input-newsletter" placeholder="Enter your email address"
+                                    name="EMAIL">
                                 <button type="submit" class="btn-style-one red-light-color">
-                                    Subscribe Now 
+                                    Subscribe Now
                                     <i class="ph-caret-right"></i>
                                 </button>
                             </form>
@@ -67,11 +59,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-7">
                         <p>
-                            Copyright @{{currentYear}} Vumy. All Rights Reserved by 
-                            <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                            Copyright @{{ currentYear }} Gharbidev. All Rights Reserved by
+                            <a href="https://gharbidev.com/" target="_blank">Gharbidev</a>
                         </p>
                     </div>
+
+
                     <div class="col-lg-6 col-md-5">
+                        <!--
                         <ul class="social-links">
                             <li>
                                 <a href="https://www.https://www.linkedin.com/.com/" target="_blank">
@@ -94,7 +89,11 @@
                                 </a>
                             </li>
                         </ul>
+
+                        -->
                     </div>
+
+
                 </div>
             </div>
         </div>
