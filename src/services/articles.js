@@ -1,5 +1,14 @@
 export const articles = [
     {
+        path: 'github-actions-iam-roles',
+        picture_path: 'blog/github-actions-iam-roles.gif',
+        title: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access',
+        categories: ['identity'],
+        tags: ['aws', 'aim', 'security', 'permissions', 'roles', 'policies', 'github-actions', 'integration', 'oidc'],
+        publication_date: '2024-06-03',
+        visits: 112,
+    },
+    {
         path: 'cloud-computing-introduction',
         picture_path: 'blog/cloud-computing-introduction.webp',
         title: 'Unlocking cloud mastery: an introductory course to Cloud Computing',

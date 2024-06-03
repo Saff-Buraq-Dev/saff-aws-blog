@@ -12,7 +12,7 @@
                             <ul>
                                 <li>
                                     <i class="ph-tag"></i>
-                                    <router-link to="/blog-categories/introduction">INTRODUCTION</router-link>
+                                    <router-link to="/blog-categories/compute">COMPUTE</router-link>
                                 </li>
                                 <li>
                                     <i class="ph-calendar-check"></i>

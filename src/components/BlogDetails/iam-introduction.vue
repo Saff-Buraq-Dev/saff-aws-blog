@@ -12,7 +12,7 @@
                             <ul>
                                 <li>
                                     <i class="ph-tag"></i>
-                                    <router-link to="/blog-categories/introduction">INTRODUCTION</router-link>
+                                    <router-link to="/blog-categories/identity">IDENTITY</router-link>
                                 </li>
                                 <li>
                                     <i class="ph-calendar-check"></i>
@@ -373,9 +373,6 @@
                             <li><a
                                     href="https://aws.amazon.com/fr/blogs/security/tag/aws-identity-and-access-management/">AWS
                                     Blog Posts</a></li>
-                            <li><a href="https://aws.amazon.com/fr/ec2/instance-explorer/">Instance Type
-                                    Explorer</a>
-                            </li>
                             <li><a href="https://www.youtube.com/watch?v=z-tbVVojMp0">AWS re:Inforce 2023 - A
                                     first-principles approach: AWS Identity and Access Management (IAM)</a></li>
                         </ul>
@@ -385,13 +382,13 @@
                                 <span class="sub">Tags:</span>
                                 <ul>
                                     <li><a href="/blog-tags/aws" rel="tag">aws</a></li>
-                                    <li><a href="/blog-tags/ec2" rel="tag">iam</a></li>
-                                    <li><a href="/blog-tags/iaas" rel="tag">security</a></li>
-                                    <li><a href="/blog-tags/linux" rel="tag">permissions</a></li>
-                                    <li><a href="/blog-tags/security-groups" rel="tag">roles</a></li>
-                                    <li><a href="/blog-tags/ssh" rel="tag">policies</a></li>
-                                    <li><a href="/blog-tags/access-keys" rel="tag">users</a></li>
-                                    <li><a href="/blog-tags/vpc" rel="tag">groups</a></li>
+                                    <li><a href="/blog-tags/iam" rel="tag">iam</a></li>
+                                    <li><a href="/blog-tags/security" rel="tag">security</a></li>
+                                    <li><a href="/blog-tags/permissions" rel="tag">permissions</a></li>
+                                    <li><a href="/blog-tags/roles" rel="tag">roles</a></li>
+                                    <li><a href="/blog-tags/policies" rel="tag">policies</a></li>
+                                    <li><a href="/blog-tags/users" rel="tag">users</a></li>
+                                    <li><a href="/blog-tags/groups" rel="tag">groups</a></li>
                                 </ul>
                             </div>
                         </div>
