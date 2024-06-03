@@ -36,14 +36,24 @@ const store = createStore({
     },
     actions: {
         async signup(context, { email, password }) {
-
-            const res = await createUserWithEmailAndPassword(auth, email, password);
-            if (res) {
-                context.commit('setUser', res.user);
-                commit('setAuthIsReady', true);
-                router.push('/');
-            } else {
-                toaster.error('could not complete signup');
+            try {
+                const res = await createUserWithEmailAndPassword(auth, email, password);
+                if (res) {
+                    context.commit('setUser', res.user);
+                    context.commit('setAuthIsReady', true);
+                    toaster.success('Signup successful');
+                    router.push('/');
+                }
+            } catch (error) {
+                let errorMessage = 'Could not complete signup. Please try again.';
+                if (error.code === 'auth/email-already-in-use') {
+                    errorMessage = 'Email address is already in use.';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = 'Invalid email address.';
+                } else if (error.code === 'auth/weak-password') {
+                    errorMessage = 'Password should be at least 6 characters.';
+                }
+                toaster.error(errorMessage);
             }
         },
         async login(context, { email, password }) {
