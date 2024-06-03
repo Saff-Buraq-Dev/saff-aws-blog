@@ -241,7 +241,7 @@ export default {
     },
     data() {
         return {
-            title: 'Managing Secure Access to AWS with Identity and Access Management (IAM)',
+            title: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access',
             image: '../../assets/images/blog/iam-introduction.png',
             installNpmCode: `npm install -g aws-cdk`,
             initProjectCode: `mkdir my-cdk-project
