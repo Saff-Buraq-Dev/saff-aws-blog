@@ -40,11 +40,12 @@
                         <h3>Newsletter</h3>
                         <div class="box">
                             <p>Latest resources, sent to your inbox weekly</p>
-                            <form class="newsletter-form" @submit.prevent>
+                            <form class="newsletter-form" @submit.prevent="submitNewsletter">
                                 <input type="text" class="input-newsletter" placeholder="Enter your email address"
-                                    name="EMAIL">
+                                    name="EMAIL" v-model="email">
                                 <button type="submit" class="btn-style-one red-light-color">
-                                    Subscribe Now
+                                    <span v-if="isLoading">Loading...</span>
+                                    <span v-else>Subscribe Now</span>
                                     <i class="ph-caret-right"></i>
                                 </button>
                             </form>
@@ -101,12 +102,59 @@
 </template>
 
 <script>
+import { createToaster } from "@meforma/vue-toaster";
+const toaster = createToaster({
+    position: "bottom",
+    duration: 3000,
+});
 export default {
-    name: 'FooterStyleTwo',
+    name: 'Footer',
     data() {
         return {
             currentYear: new Date().getFullYear(),
+            email: '',
+            isLoading: false,
         };
+    },
+    methods: {
+        submitNewsletter() {
+            this.isLoading = true;
+            const payload = {
+                email: this.email,
+            };
+
+            // Envoyer le payload à votre endpoint
+            fetch('https://f0574d5dfe.execute-api.ca-central-1.amazonaws.com/dev/newsletter/users', {
+                method: 'POST',
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.status === 200) {
+                    toaster.success('Subscribed successfully!');
+                    // Réinitialiser le champ email après la soumission réussie
+                    this.email = '';
+                } else if (response.status === 400) {
+                    response.json().then(data => {
+                        if (data.message === 'Email already exists') {
+                            toaster.warning('Email already exists');
+                        } else {
+                            toaster.error('Something went wrong!');
+                        }
+                    });
+                } else {
+                    toaster.error('Something went wrong!');
+                }
+            }).catch(error => {
+                toaster.error('Something went wrong!');
+            }).finally(() => {
+                this.isLoading = false;
+            });
+            SENDGRID_TEMPLATE_ID = os.environ['SENDGRID_TEMPLATE_ID']
+            SENDGRID_SENDER_EMAIL = os.environ['SENDGRID_SENDER_EMAIL']
+            UNSUBSCRIBE_URL = os.environ['UNSUBSCRIBE_URL']
+        },
     }
 }
 </script>
