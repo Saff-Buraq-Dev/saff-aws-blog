@@ -338,19 +338,19 @@ jobs:
         useHead({
             title: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access',
             meta: [
-                { name: 'description', content: 'Introduction to AWS IAM: Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
-                { name: 'keywords', content: 'AWS, IAM, Identity and Access Management, Security, Cloud, AWS Security, IAM Users, IAM Groups, IAM Roles, IAM Policies' },
+                { name: 'description', content: 'Discover how to integrate AWS and GitHub using OIDC to automate resource deployment, eliminating the need for long-term IAM user access keys.' },
+                { name: 'keywords', content: 'AWS, IAM, Identity and Access Management, Security, Cloud, AWS Security, IAM Roles, IAM Policies, Github, OIDC, Github Actions' },
                 { name: 'author', content: 'Safouene Gharbi' },
                 { property: 'og:title', content: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access' },
-                { property: 'og:description', content: 'Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
+                { property: 'og:description', content: 'Discover how to integrate AWS and GitHub using OIDC to automate resource deployment, eliminating the need for long-term IAM user access keys.' },
                 { property: 'og:image', content: imageUrl },
                 { property: 'og:image:width', content: "1200" },
                 { property: 'og:image:height', content: "627" },
-                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/iam-introduction' },
+                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/github-actions-iam-roles' },
                 { property: 'og:type', content: 'article' },
                 { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: 'Introduction to AWS IAM' },
-                { name: 'twitter:description', content: 'Learn about IAM users, groups, roles, and policies to manage access and permissions in AWS securely.' },
+                { name: 'twitter:title', content: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access' },
+                { name: 'twitter:description', content: 'Discover how to integrate AWS and GitHub using OIDC to automate resource deployment, eliminating the need for long-term IAM user access keys.' },
                 { name: 'twitter:image', content: imageUrl },
             ]
         });
