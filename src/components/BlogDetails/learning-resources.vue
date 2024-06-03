@@ -250,9 +250,14 @@
 import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/learning-resources.webp';
 
+import Comments from '../Comments/Comments.vue';
+
 export default {
 
     name: 'BlogDetailsLearningResources',
+    components: {
+        Comments
+    },
 
     data: () => ({
         policyCode: `{
@@ -281,7 +286,7 @@ export default {
         useHead({
             title: 'Empowering Your Cloud Journey: A Curated List of Resources to Master AWS',
             meta: [
-                { name: 'description', content: 'Empowering Your Cloud Journey: A Curated List of Resources to Master AWS' },
+                { name: 'description', content: 'A curated list of invaluable resources to smoothen your AWS learning journey, providing a stepping stone towards achieving cloud mastery.' },
                 { name: 'keywords', content: 'AWS, Cloud, Learning Resources, AWS Documentation, AWS Blog, Online Training Platforms, Books, Forums, Communities, YouTube Channels' },
                 { name: 'author', content: 'Votre Nom' },
                 { property: 'og:title', content: 'Empowering Your Cloud Journey: A Curated List of Resources to Master AWS' },

@@ -456,9 +456,14 @@
 import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/ec2-introduction.webp';
 
+import Comments from '../Comments/Comments.vue';
+
 export default {
 
     name: 'BlogDetailsEc2Introduction',
+    components: {
+        Comments
+    },
 
     data: () => ({
         userDataCode: `#!/bin/bash

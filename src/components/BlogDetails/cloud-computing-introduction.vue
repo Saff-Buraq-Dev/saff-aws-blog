@@ -155,8 +155,13 @@
 import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/cloud-computing-introduction.webp';
 
+import Comments from '../Comments/Comments.vue';
+
 export default {
     name: 'BlogDetailsCloudComputingIntroduction',
+    components: {
+        Comments
+    },
     setup() {
         useHead({
             title: 'Unlocking Cloud Mastery: An Introductory Course to Cloud Computing',

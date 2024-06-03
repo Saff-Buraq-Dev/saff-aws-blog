@@ -192,10 +192,14 @@
 import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/aws-overview.webp';
 
+import Comments from '../Comments/Comments.vue';
+
 export default {
 
     name: 'BlogDetailsContent',
-
+    components: {
+        Comments
+    },
     data: () => ({
         policyCode: `{
     "Version": "2012-10-17",
