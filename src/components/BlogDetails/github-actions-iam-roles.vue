@@ -170,6 +170,7 @@
                         </div>
 
                         <hr style="margin-bottom: 25px;">
+                        <h4 style="margin-bottom: 25px;">References</h4>
 
 
                         <ul>
