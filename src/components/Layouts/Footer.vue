@@ -137,7 +137,7 @@ export default {
                     this.email = '';
                 } else if (response.status === 400) {
                     response.json().then(data => {
-                        if (data.message === 'Email already exists') {
+                        if (data === 'Email already exists') {
                             toaster.warning('Email already exists');
                         } else {
                             toaster.error('Something went wrong!');
@@ -151,9 +151,6 @@ export default {
             }).finally(() => {
                 this.isLoading = false;
             });
-            SENDGRID_TEMPLATE_ID = os.environ['SENDGRID_TEMPLATE_ID']
-            SENDGRID_SENDER_EMAIL = os.environ['SENDGRID_SENDER_EMAIL']
-            UNSUBSCRIBE_URL = os.environ['UNSUBSCRIBE_URL']
         },
     }
 }

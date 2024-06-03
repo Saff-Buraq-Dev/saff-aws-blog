@@ -103,10 +103,12 @@
                     </ul>
                     <div class="box">
                         <p>Latest resources, sent to your inbox weekly</p>
-                        <form class="newsletter-form" @submit.prevent>
-                            <input type="text" class="input-newsletter" placeholder="Enter your email address">
-                            <button type="submit" class="btn-style-one green-color">Subscribe Now <i
-                                    class="ph-caret-right"></i></button>
+                        <form class="newsletter-form" @submit.prevent="submitNewsletter">
+                            <input type="text" class="input-newsletter" placeholder="Enter your email address"
+                                v-model="email">
+                            <button type="submit" class="btn-style-one green-color"><span
+                                    v-if="isLoading">Loading...</span>
+                                <span v-else>Subscribe Now</span> <i class="ph-caret-right"></i></button>
                         </form>
                     </div>
                 </div>
@@ -119,6 +121,13 @@
 <script>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+
+import { createToaster } from "@meforma/vue-toaster";
+const toaster = createToaster({
+    position: "bottom",
+    duration: 3000,
+});
+
 export default {
     name: 'Navbar',
     data() {
@@ -128,7 +137,9 @@ export default {
             button_show_state: false,
             search: false,
             button_search_state: false,
-            searchQuery: ''
+            searchQuery: '',
+            email: '',
+            isLoading: false,
         };
     },
     mounted() {
@@ -164,7 +175,42 @@ export default {
         },
         logout() {
             this.$store.dispatch('logout');
-        }
+        },
+        submitNewsletter() {
+            this.isLoading = true;
+            const payload = {
+                email: this.email,
+            };
+
+            // Envoyer le payload à votre endpoint
+            fetch('https://f0574d5dfe.execute-api.ca-central-1.amazonaws.com/dev/newsletter/users', {
+                method: 'POST',
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.status === 200) {
+                    toaster.success('Subscribed successfully!');
+                    // Réinitialiser le champ email après la soumission réussie
+                    this.email = '';
+                } else if (response.status === 400) {
+                    response.json().then(data => {
+                        if (data === 'Email already exists') {
+                            toaster.warning('Email already exists');
+                        } else {
+                            toaster.error('Something went wrong!');
+                        }
+                    });
+                } else {
+                    toaster.error('Something went wrong!');
+                }
+            }).catch(error => {
+                toaster.error('Something went wrong!');
+            }).finally(() => {
+                this.isLoading = false;
+            });
+        },
     }
 }
 </script>
