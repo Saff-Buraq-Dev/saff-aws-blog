@@ -93,6 +93,10 @@
                             <img src="../../assets/images/blog/ec2-instances-1.webp" alt="blog-details">
                         </div>
 
+                        <p><strong>Source: </strong><a href="https://redblink.com/amazon-ec2-instance-types/"
+                                target="_blank">AWS EC2
+                                Instance Types</a></p>
+
                         <hr>
 
                         <h4 style="margin-bottom: 25px;">Pricing</h4>
