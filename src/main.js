@@ -7,6 +7,7 @@ import BootstrapVue3 from "bootstrap-vue-3";
 import Toaster from "@meforma/vue-toaster";
 import { createHead } from '@vueuse/head';
 import { createVCodeBlock } from '@wdns/vue-code-block';
+import VueMathjax from 'vue-mathjax-next';
 
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -28,6 +29,7 @@ app.use(store);
 app.use(BootstrapVue3);
 app.use(VCodeBlock);
 app.use(head);
+app.use(VueMathjax)
 
 app.mount("#app");
 

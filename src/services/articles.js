@@ -1,12 +1,21 @@
 export const articles = [
     {
+        path: 'dynamodb-overview',
+        picture_path: 'blog/dynamodb-overview.png',
+        title: 'All You Need to Know About Amazon DynamoDB',
+        categories: ['serverless'],
+        tags: ['aws', 'dynamodb', 'nosql', 'database', 'serverless', 'scalability', 'performance'],
+        publication_date: '2024-06-13',
+        visits: 216,
+    },
+    {
         path: 'github-actions-iam-roles',
         picture_path: 'blog/github-actions-iam-roles.gif',
-        title: 'Seamless Integration: Configuring GitHub Actions with OIDC and IAM Roles for Secure, Keyless Access',
+        title: 'Configuring GitHub Actions with OIDC and IAM Roles',
         categories: ['identity'],
         tags: ['aws', 'aim', 'security', 'permissions', 'roles', 'policies', 'github-actions', 'integration', 'oidc'],
         publication_date: '2024-06-03',
-        visits: 112,
+        visits: 1081,
     },
     {
         path: 'cloud-computing-introduction',
