@@ -1,9 +1,13 @@
 <template>
-    <div class="container">
-        <Navbar></Navbar>
-        <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0"
-            class="full-page-iframe"></iframe>
-        <Footer></Footer>
+    <div>
+        <Navbar />
+
+        <div class="container">
+            <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0"
+                class="full-page-iframe"></iframe>
+        </div>
+
+        <Footer />
     </div>
 </template>
 
