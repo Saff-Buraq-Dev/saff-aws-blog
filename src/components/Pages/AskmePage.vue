@@ -4,7 +4,7 @@
 
         <div class="container">
             <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0"
-                class="full-page-iframe"></iframe>
+                class="centered-iframe"></iframe>
         </div>
 
         <Footer />
@@ -27,17 +27,20 @@ export default {
 <style scoped>
 .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
     height: 100vh;
     /* Viewport height */
     margin: 0;
 }
 
-.full-page-iframe {
-    flex-grow: 1;
-    /* Make iframe take all available space */
-    width: 100%;
-    height: 100%;
+.centered-iframe {
+    width: 80%;
+    /* Adjust the width as needed */
+    height: 80%;
+    /* Adjust the height as needed */
     border: none;
 }
 </style>
