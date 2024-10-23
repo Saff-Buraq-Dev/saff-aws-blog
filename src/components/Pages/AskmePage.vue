@@ -1,8 +1,9 @@
 <template>
-    <div>
-        <Navbar />
-        <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0" width="100%"></iframe>
-        <Footer />
+    <div class="container">
+        <Navbar></Navbar>
+        <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0"
+            class="full-page-iframe"></iframe>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -18,3 +19,21 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Viewport height */
+    margin: 0;
+}
+
+.full-page-iframe {
+    flex-grow: 1;
+    /* Make iframe take all available space */
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
