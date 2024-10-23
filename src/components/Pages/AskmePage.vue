@@ -1,13 +1,7 @@
 <template>
     <div>
         <Navbar />
-        <div class="page-title-area">
-            <div class="container">
-                <div class="page-title-content">
-                    <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
+        <iframe src="https://b6qbphhn.chat.qbusiness.us-east-1.on.aws/" frameborder="0" width="100%"></iframe>
         <Footer />
     </div>
 </template>
