@@ -1,5 +1,13 @@
 export const articles = [
     {
+        path: 'native-iac-tools',
+        picture_path: 'blog/native-iac-tools.png',
+        title: 'Native IaC Tools on AWS: CloudFormation and CDK',
+        categories: ['iac'],
+        tags: ['aws', 'cloudformation', 'cdk', 'iac', 'automation'],
+        publication_date: '2025-01-02',
+        visits: 785,
+    },{
         path: 'dynamodb-overview',
         picture_path: 'blog/dynamodb-overview.png',
         title: 'All You Need to Know About Amazon DynamoDB',
