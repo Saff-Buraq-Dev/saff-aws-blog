@@ -16,7 +16,7 @@
                                 </li>
                                 <li>
                                     <i class="ph-calendar-check"></i>
-                                    02 Jun, 2024
+                                    28 Apr, 2025
                                 </li>
                             </ul>
                         </div>

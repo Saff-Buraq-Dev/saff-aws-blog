@@ -5,7 +5,7 @@ export const articles = [
         title: 'Configuring GitHub Actions with OIDC and IAM Roles',
         categories: ['identity'],
         tags: ['aws', 'aim', 'security', 'permissions', 'roles', 'policies', 'github-actions', 'integration', 'oidc'],
-        publication_date: '2025-04-28',
+        publication_date: '2025-04-29',
         visits: 385,
     },
     {
