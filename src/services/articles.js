@@ -1,5 +1,14 @@
 export const articles = [
     {
+        path: 'github-actions-iam-roles',
+        picture_path: 'blog/github-actions-iam-roles.gif',
+        title: 'Configuring GitHub Actions with OIDC and IAM Roles',
+        categories: ['identity'],
+        tags: ['aws', 'aim', 'security', 'permissions', 'roles', 'policies', 'github-actions', 'integration', 'oidc'],
+        publication_date: '2025-04-28',
+        visits: 385,
+    },
+    {
         path: 'native-iac-tools',
         picture_path: 'blog/native-iac-tools.png',
         title: 'Native IaC Tools on AWS: CloudFormation and CDK',
@@ -15,15 +24,6 @@ export const articles = [
         tags: ['aws', 'dynamodb', 'nosql', 'database', 'serverless', 'scalability', 'performance'],
         publication_date: '2024-06-13',
         visits: 216,
-    },
-    {
-        path: 'github-actions-iam-roles',
-        picture_path: 'blog/github-actions-iam-roles.gif',
-        title: 'Configuring GitHub Actions with OIDC and IAM Roles',
-        categories: ['identity'],
-        tags: ['aws', 'aim', 'security', 'permissions', 'roles', 'policies', 'github-actions', 'integration', 'oidc'],
-        publication_date: '2024-06-03',
-        visits: 1081,
     },
     {
         path: 'cloud-computing-introduction',
