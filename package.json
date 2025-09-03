@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "npx vite build && node scripts/generate-static-pages.js",
+    "build:spa": "npx vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "check-images": "node scripts/check-images.js",
+    "generate-static": "node scripts/generate-static-pages.js",
+    "test-server": "node scripts/test-server.js",
+    "seo-audit": "echo 'Run SEO audit tools like Lighthouse, PageSpeed Insights, and social media validators'"
   },
   "dependencies": {
     "@meforma/vue-toaster": "^1.3.0",

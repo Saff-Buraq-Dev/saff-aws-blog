@@ -1,44 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
     <url>
         <loc>https://blog.gharbidev.com/</loc>
         <lastmod>2024-06-02</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
 
+    <!-- Contact Page -->
     <url>
-        <loc>https://blog.gharbidev.com/blog-details/github-actions-iam-roles</loc>
-        <lastmod>2025-04-28</lastmod>
-        <priority>0.50</priority>
+        <loc>https://blog.gharbidev.com/contact</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.30</priority>
     </url>
+
+    <!-- Blog Articles -->
     <url>
         <loc>https://blog.gharbidev.com/blog-details/aws-overview</loc>
         <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
-    </url>
-    <url>
-        <loc>https://blog.gharbidev.com/blog-details/learning-resources</loc>
-        <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
-    </url>
-    <url>
-        <loc>https://blog.gharbidev.com/blog-details/iam-introduction</loc>
-        <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
-    </url>
-    <url>
-        <loc>https://blog.gharbidev.com/blog-details/ec2-introduction</loc>
-        <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
     <url>
         <loc>https://blog.gharbidev.com/blog-details/cloud-computing-introduction</loc>
         <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://blog.gharbidev.com/blog-details/aws-overview</loc>
+        <loc>https://blog.gharbidev.com/blog-details/dynamodb-overview</loc>
         <lastmod>2024-06-02</lastmod>
-        <priority>0.50</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://blog.gharbidev.com/blog-details/ec2-introduction</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://blog.gharbidev.com/blog-details/github-actions-iam-roles</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://blog.gharbidev.com/blog-details/iam-introduction</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://blog.gharbidev.com/blog-details/learning-resources</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://blog.gharbidev.com/blog-details/native-iac-tools</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
 </urlset>

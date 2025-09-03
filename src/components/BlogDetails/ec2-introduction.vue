@@ -1,4 +1,19 @@
 <template>
+    <!-- SEO Components -->
+    <SEOHead title="Discovering EC2: Your Gateway to Cloud Computing with AWS"
+        description="Complete guide to Amazon EC2 - learn how to launch, configure, and manage virtual servers in the cloud. Includes practical examples, pricing models, and troubleshooting tips."
+        keywords="AWS EC2, Amazon EC2, Cloud Computing, Virtual Servers, AWS Compute, EC2 Instances, Cloud Infrastructure"
+        :image="imageUrl" url="https://blog.gharbidev.com/blog-details/ec2-introduction"
+        published-time="2023-10-21T00:00:00Z" modified-time="2023-10-21T00:00:00Z" section="Cloud Computing"
+        :tags="['AWS', 'EC2', 'Cloud Computing', 'Virtual Servers', 'Infrastructure']" />
+
+    <StructuredData title="Discovering EC2: Your Gateway to Cloud Computing with AWS"
+        description="Complete guide to Amazon EC2 - learn how to launch, configure, and manage virtual servers in the cloud. Includes practical examples, pricing models, and troubleshooting tips."
+        :image="imageUrl" url="https://blog.gharbidev.com/blog-details/ec2-introduction"
+        published-time="2023-10-21T00:00:00Z" modified-time="2023-10-21T00:00:00Z"
+        :keywords="['AWS', 'EC2', 'Amazon EC2', 'Cloud Computing', 'Virtual Servers']" category="Cloud Computing"
+        :reading-time="12" />
+
     <div class="blog-details-area ptb-100">
         <div class="container">
             <div class="row justify-content-center">
@@ -515,12 +530,13 @@
 </style>
 
 <script>
-import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/ec2-introduction.webp';
 
 import Comments from '../Comments/Comments.vue';
 import BlogSummary from '../BlogSummary/BlogSummary.vue';
 import Tags from '../Tags/Tags.vue';
+import SEOHead from '../Common/SEOHead.vue';
+import StructuredData from '../Common/StructuredData.vue';
 
 export default {
 
@@ -528,7 +544,9 @@ export default {
     components: {
         Comments,
         BlogSummary,
-        Tags
+        Tags,
+        SEOHead,
+        StructuredData
     },
 
     data: () => ({
@@ -550,28 +568,7 @@ echo "Hello World from $(hostname -i)" > /var/www/html/index.html`,
             { id: 'connecting', title: 'Connecting to the Instance' },
             { id: 'references', title: 'References' }
         ]
-    }),
-    setup() {
-        useHead({
-            title: 'Discovering EC2: Your Gateway to Cloud Computing with AWS',
-            meta: [
-                { name: 'description', content: 'Discovering EC2: Your Gateway to Cloud Computing with AWS' },
-                { name: 'keywords', content: 'AWS, Cloud Computing, EC2, Amazon Web Services' },
-                { name: 'author', content: 'Safouene Gharbi' },
-                { property: 'og:title', content: 'Discovering EC2: Your Gateway to Cloud Computing with AWS' },
-                { property: 'og:description', content: 'An introduction to Amazon EC2, the foundational service that allows you to launch and manage virtual servers in the cloud.' },
-                { property: 'og:image', content: imageUrl },
-                { property: 'og:image:width', content: "1200" },
-                { property: 'og:image:height', content: "627" },
-                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/ec2-introduction' },
-                { property: 'og:type', content: 'article' },
-                { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: 'Discovering EC2: Your Gateway to Cloud Computing with AWS' },
-                { name: 'twitter:description', content: 'An introduction to Amazon EC2, the foundational service that allows you to launch and manage virtual servers in the cloud.' },
-                { name: 'twitter:image', content: imageUrl },
-            ]
-        });
-    },
+    })
 
 
 }

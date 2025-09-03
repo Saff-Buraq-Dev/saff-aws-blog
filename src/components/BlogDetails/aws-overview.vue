@@ -1,4 +1,29 @@
 <template>
+    <!-- SEO Components -->
+    <SEOHead
+        title="AWS Overview - Complete Guide to Amazon Web Services"
+        description="Comprehensive overview of Amazon Web Services (AWS), covering key features, core services, global infrastructure, and everything you need to know about AWS cloud computing platform."
+        keywords="AWS, Amazon Web Services, Cloud Computing, EC2, S3, RDS, VPC, CloudFront, AWS Services, Cloud Infrastructure"
+        :image="imageUrl"
+        url="https://blog.gharbidev.com/blog-details/aws-overview"
+        published-time="2023-11-09T00:00:00Z"
+        modified-time="2023-11-09T00:00:00Z"
+        section="Cloud Computing"
+        :tags="['AWS', 'Cloud Computing', 'Amazon Web Services', 'Infrastructure']"
+    />
+
+    <StructuredData
+        title="AWS Overview - Complete Guide to Amazon Web Services"
+        description="Comprehensive overview of Amazon Web Services (AWS), covering key features, core services, global infrastructure, and everything you need to know about AWS cloud computing platform."
+        :image="imageUrl"
+        url="https://blog.gharbidev.com/blog-details/aws-overview"
+        published-time="2023-11-09T00:00:00Z"
+        modified-time="2023-11-09T00:00:00Z"
+        :keywords="['AWS', 'Amazon Web Services', 'Cloud Computing', 'EC2', 'S3', 'RDS']"
+        category="Cloud Computing"
+        :reading-time="8"
+    />
+
     <div class="blog-details-area ptb-100">
         <div class="container">
             <div class="row justify-content-center">
@@ -200,12 +225,13 @@
 </style>
 
 <script>
-import { useHead } from '@vueuse/head';
 import imageUrl from '../../assets/images/blog/aws-overview.webp';
 
 import Comments from '../Comments/Comments.vue';
 import BlogSummary from '../BlogSummary/BlogSummary.vue';
 import Tags from '../Tags/Tags.vue';
+import SEOHead from '../Common/SEOHead.vue';
+import StructuredData from '../Common/StructuredData.vue';
 
 export default {
 
@@ -213,7 +239,9 @@ export default {
     components: {
         Comments,
         BlogSummary,
-        Tags
+        Tags,
+        SEOHead,
+        StructuredData
     },
     data: () => ({
         policyCode: `{
@@ -242,28 +270,7 @@ export default {
             { id: 'core-services', title: 'Core AWS Services' }
 
         ]
-    }),
-    setup() {
-        useHead({
-            title: 'AWS Overview',
-            meta: [
-                { name: 'description', content: 'An overview of Amazon Web Services (AWS), covering its key features, core services, and global infrastructure.' },
-                { name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing' },
-                { name: 'author', content: 'Safouene Gharbi' },
-                { property: 'og:title', content: 'AWS Overview' },
-                { property: 'og:description', content: 'An overview of Amazon Web Services (AWS), covering its key features, core services, and global infrastructure.' },
-                { property: 'og:image', content: imageUrl },
-                { property: 'og:image:width', content: "1200" },
-                { property: 'og:image:height', content: "627" },
-                { property: 'og:url', content: 'https://blog.gharbidev.com/blog-details/aws-overview' },
-                { property: 'og:type', content: 'article' },
-                { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: 'AWS Overview' },
-                { name: 'twitter:description', content: 'An overview of Amazon Web Services (AWS), covering its key features, core services, and global infrastructure.' },
-                { name: 'twitter:image', content: imageUrl },
-            ]
-        });
-    },
+    })
 
 
 }
