@@ -14,6 +14,33 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Function to find built asset path
+function findBuiltAssetPath(originalPath, distDir) {
+  const filename = path.basename(originalPath, path.extname(originalPath));
+  const extension = path.extname(originalPath);
+
+  try {
+    const assetsDir = path.join(distDir, 'assets');
+    if (!fs.existsSync(assetsDir)) {
+      console.warn(`Assets directory not found: ${assetsDir}`);
+      return originalPath;
+    }
+
+    const files = fs.readdirSync(assetsDir);
+    const matchingFile = files.find(file =>
+      file.startsWith(filename) && file.endsWith(extension)
+    );
+
+    if (matchingFile) {
+      return `/assets/${matchingFile}`;
+    }
+  } catch (error) {
+    console.warn(`Error finding built asset for ${originalPath}:`, error.message);
+  }
+
+  return originalPath;
+}
+
 // Article metadata - this should match your actual articles
 const articles = [
   {
@@ -21,7 +48,7 @@ const articles = [
     title: 'AWS Overview - Complete Guide to Amazon Web Services',
     description: 'Comprehensive overview of Amazon Web Services (AWS), covering key features, core services, global infrastructure, and everything you need to know about AWS cloud computing platform.',
     keywords: 'AWS, Amazon Web Services, Cloud Computing, EC2, S3, RDS, VPC, CloudFront, AWS Services, Cloud Infrastructure',
-    image: '/src/assets/images/blog/aws-overview.webp',
+    image: 'aws-overview.webp',
     publishedTime: '2023-11-09T00:00:00Z',
     modifiedTime: '2023-11-09T00:00:00Z',
     category: 'Cloud Computing',
@@ -32,7 +59,7 @@ const articles = [
     title: 'Discovering EC2: Your Gateway to Cloud Computing with AWS',
     description: 'Complete guide to Amazon EC2 - learn how to launch, configure, and manage virtual servers in the cloud. Includes practical examples, pricing models, and troubleshooting tips.',
     keywords: 'AWS EC2, Amazon EC2, Cloud Computing, Virtual Servers, AWS Compute, EC2 Instances, Cloud Infrastructure',
-    image: '/src/assets/images/blog/ec2-introduction.webp',
+    image: 'ec2-introduction.webp',
     publishedTime: '2023-10-21T00:00:00Z',
     modifiedTime: '2023-10-21T00:00:00Z',
     category: 'Cloud Computing',
@@ -43,7 +70,7 @@ const articles = [
     title: 'Introduction to Cloud Computing - Complete Beginner\'s Guide',
     description: 'Learn the fundamentals of cloud computing, including service models (IaaS, PaaS, SaaS), deployment models, benefits, and key concepts for beginners.',
     keywords: 'Cloud Computing, IaaS, PaaS, SaaS, Cloud Services, Cloud Infrastructure, AWS, Azure, Google Cloud',
-    image: '/src/assets/images/blog/cloud-computing-introduction.webp',
+    image: 'cloud-computing-introduction.webp',
     publishedTime: '2023-10-15T00:00:00Z',
     modifiedTime: '2023-10-15T00:00:00Z',
     category: 'Cloud Computing',
@@ -54,7 +81,7 @@ const articles = [
     title: 'AWS IAM Introduction - Identity and Access Management Guide',
     description: 'Complete guide to AWS Identity and Access Management (IAM). Learn about users, groups, roles, policies, and security best practices.',
     keywords: 'AWS IAM, Identity Access Management, AWS Security, IAM Policies, IAM Roles, AWS Users, Cloud Security',
-    image: '/src/assets/images/blog/iam-introduction.png',
+    image: 'iam-introduction.png',
     publishedTime: '2023-10-10T00:00:00Z',
     modifiedTime: '2023-10-10T00:00:00Z',
     category: 'Security',
@@ -65,7 +92,7 @@ const articles = [
     title: 'Amazon DynamoDB Overview - NoSQL Database Guide',
     description: 'Comprehensive guide to Amazon DynamoDB, AWS\'s fully managed NoSQL database service. Learn about features, use cases, and best practices.',
     keywords: 'AWS DynamoDB, NoSQL Database, Amazon DynamoDB, Database, AWS Database Services, Serverless Database',
-    image: '/src/assets/images/blog/dynamodb-overview.png',
+    image: 'dynamodb-overview.png',
     publishedTime: '2023-10-05T00:00:00Z',
     modifiedTime: '2023-10-05T00:00:00Z',
     category: 'Database',
@@ -76,7 +103,7 @@ const articles = [
     title: 'GitHub Actions with AWS IAM Roles - Secure CI/CD Guide',
     description: 'Learn how to securely integrate GitHub Actions with AWS using IAM roles. Step-by-step guide for setting up OIDC and secure deployments.',
     keywords: 'GitHub Actions, AWS IAM Roles, CI/CD, DevOps, AWS OIDC, Secure Deployment, GitHub AWS Integration',
-    image: '/src/assets/images/blog/github-actions-iam-roles.gif',
+    image: 'github-actions-iam-roles.gif',
     publishedTime: '2023-09-30T00:00:00Z',
     modifiedTime: '2023-09-30T00:00:00Z',
     category: 'DevOps',
@@ -87,7 +114,7 @@ const articles = [
     title: 'AWS Learning Resources - Complete Study Guide',
     description: 'Comprehensive collection of AWS learning resources including official documentation, courses, certifications, and hands-on labs.',
     keywords: 'AWS Learning, AWS Certification, AWS Training, Cloud Learning Resources, AWS Study Guide, AWS Documentation',
-    image: '/src/assets/images/blog/learning-resources.webp',
+    image: 'learning-resources.webp',
     publishedTime: '2023-09-25T00:00:00Z',
     modifiedTime: '2023-09-25T00:00:00Z',
     category: 'Education',
@@ -98,7 +125,7 @@ const articles = [
     title: 'Native Infrastructure as Code Tools - AWS CloudFormation Guide',
     description: 'Explore native Infrastructure as Code tools including AWS CloudFormation, CDK, and best practices for managing cloud infrastructure.',
     keywords: 'Infrastructure as Code, AWS CloudFormation, AWS CDK, IaC, Cloud Infrastructure, DevOps, Infrastructure Management',
-    image: '/src/assets/images/blog/native-iac-tools.png',
+    image: 'native-iac-tools.png',
     publishedTime: '2023-09-20T00:00:00Z',
     modifiedTime: '2023-09-20T00:00:00Z',
     category: 'Infrastructure',
@@ -107,10 +134,13 @@ const articles = [
 ];
 
 // Base HTML template
-function generateHTMLTemplate(article) {
+function generateHTMLTemplate(article, distDir) {
   const baseUrl = 'https://blog.gharbidev.com';
   const articleUrl = `${baseUrl}/blog-details/${article.id}`;
-  const imageUrl = article.image.startsWith('http') ? article.image : `${baseUrl}${article.image}`;
+
+  // Find the built asset path for the image
+  const builtImagePath = findBuiltAssetPath(article.image, distDir);
+  const imageUrl = builtImagePath.startsWith('http') ? builtImagePath : `${baseUrl}${builtImagePath}`;
 
   return `<!doctype html>
 <html lang="en">
@@ -251,11 +281,15 @@ function generateStaticPages() {
       fs.mkdirSync(articleDir, { recursive: true });
     }
 
-    const htmlContent = generateHTMLTemplate(article);
+    const htmlContent = generateHTMLTemplate(article, distDir);
     const filePath = path.join(articleDir, 'index.html');
-    
+
     fs.writeFileSync(filePath, htmlContent);
+
+    // Find and log the actual image path used
+    const builtImagePath = findBuiltAssetPath(article.image, distDir);
     console.log(`✅ Generated: /blog-details/${article.id}/index.html`);
+    console.log(`   Image: ${article.image} → ${builtImagePath}`);
     generatedCount++;
   });
 
